@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="zh-TW">
+	<head>
+		<title>video player</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="css/playerstyle.css" media="screen" type="text/css" />
+		<script src="js/videoplayer.js"></script>
+	</head>
+	<body>
+		<div id="playerbox">
+			<video id="video" controls="controls" width="600" height="400" poster="http://media.w3.org/2010/05/sintel/poster.png">
+				<source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4" />
+				<p>Your browser does not support the video tag.</p>
+			</video>
+		</div>
+		<div id="buttons">
+		    <button class="large awesome" onclick="document._video.load()">load()</button>
+		    <button class="large awesome" onclick="document._video.play()">play()</button>
+		    <button class="large awesome" onclick="document._video.pause()">pause()</button>
+		    <button class="large awesome" onclick="document._video.currentTime+=10">currentTime+=10</button>
+		    <button class="large awesome" onclick="document._video.currentTime-=10">currentTime-=10</button>
+		    <button class="large awesome" onclick="document._video.currentTime=50">currentTime=50</button><br>
+		    <button class="large awesome" onclick="document._video.playbackRate++">playbackRate++</button>
+		    <button class="large awesome" onclick="document._video.playbackRate--">playbackRate--</button>
+		    <button class="large awesome" onclick="document._video.playbackRate+=0.1">playbackRate+=0.1</button>
+		    <button class="large awesome" onclick="document._video.playbackRate-=0.1">playbackRate-=0.1</button><br>
+		    <button class="large awesome" onclick="document._video.volume+=0.1">volume+=0.1</button>
+		    <button class="large awesome" onclick="document._video.volume-=0.1">volume-=0.1</button>
+		    <button class="large red awesome" onclick="document._video.muted=true">muted=true</button>
+		    <button class="large red awesome" onclick="document._video.muted=false">muted=false</button><br>
+		    <button class="large blue awesome" onclick="switchVideo(0);">Sintel teaser</button>
+		    <button class="large blue awesome" onclick="switchVideo(1);">Bunny trailer</button>
+		    <button class="large blue awesome" onclick="switchVideo(2);">Bunny movie</button>
+		    <button class="large blue awesome" onclick="switchVideo(3);">Test movie</button>
+	    </div>
+	</body>
+</html>

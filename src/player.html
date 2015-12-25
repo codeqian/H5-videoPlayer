@@ -4,34 +4,25 @@
 		<title>video player</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="css/playerstyle.css" media="screen" type="text/css" />
+		<script src="js/jquery-1.11.3.min.js"></script>
 		<script src="js/videoplayer.js"></script>
 	</head>
 	<body>
 		<div id="playerbox">
-			<video id="video" controls="controls" width="600" height="400" poster="http://media.w3.org/2010/05/sintel/poster.png">
-				<source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4" />
+			<video id="video" controls width="640" height="480" poster="http://media.w3.org/2010/05/video/poster.png">
+				<source src="http://media.w3.org/2010/05/video/movie_300.mp4" type="video/mp4" />
 				<p>Your browser does not support the video tag.</p>
 			</video>
 		</div>
 		<div id="buttons">
-		    <button class="large awesome" onclick="document._video.load()">load()</button>
-		    <button class="large awesome" onclick="document._video.play()">play()</button>
-		    <button class="large awesome" onclick="document._video.pause()">pause()</button>
-		    <button class="large awesome" onclick="document._video.currentTime+=10">currentTime+=10</button>
-		    <button class="large awesome" onclick="document._video.currentTime-=10">currentTime-=10</button>
-		    <button class="large awesome" onclick="document._video.currentTime=50">currentTime=50</button><br>
-		    <button class="large awesome" onclick="document._video.playbackRate++">playbackRate++</button>
-		    <button class="large awesome" onclick="document._video.playbackRate--">playbackRate--</button>
-		    <button class="large awesome" onclick="document._video.playbackRate+=0.1">playbackRate+=0.1</button>
-		    <button class="large awesome" onclick="document._video.playbackRate-=0.1">playbackRate-=0.1</button><br>
-		    <button class="large awesome" onclick="document._video.volume+=0.1">volume+=0.1</button>
-		    <button class="large awesome" onclick="document._video.volume-=0.1">volume-=0.1</button>
-		    <button class="large red awesome" onclick="document._video.muted=true">muted=true</button>
-		    <button class="large red awesome" onclick="document._video.muted=false">muted=false</button><br>
-		    <button class="large blue awesome" onclick="switchVideo(0);">Sintel teaser</button>
-		    <button class="large blue awesome" onclick="switchVideo(1);">Bunny trailer</button>
-		    <button class="large blue awesome" onclick="switchVideo(2);">Bunny movie</button>
-		    <button class="large blue awesome" onclick="switchVideo(3);">Test movie</button>
+		    <button id="playBtn" onclick="playOrPause()">play</button>
+		    <button id="forwordBtn" onclick="videoSkip(true)">currentTime+=10</button>
+		    <button id="rewordBtn" onclick="videoSkip(false)">currentTime-=10</button>
+		    <button id="speedUpBtn" onclick="changeSpeed(true)">playbackRate+</button>
+		    <button id="speedDownBtn" onclick="changeSpeed(false)">playbackRate-</button>
+		    <button id="volumeUp" onclick="changeVolume(true)">volume+=0.1</button>
+		    <button id="volumeDown" onclick="changeVolume(false)">volume-=0.1</button><br>
+		    <button id="mutedBtn" onclick="muted()">muted</button>
 	    </div>
 	</body>
 </html>

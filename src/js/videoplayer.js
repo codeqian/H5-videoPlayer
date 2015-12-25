@@ -1,33 +1,59 @@
 function init() {
     document._video = document.getElementById("video");
+    document._playBtn=document.getElementById("playBtn");
+    document._mutedBtn=document.getElementById("mutedBtn");
+    // document._video.controls = false;
 }
+
 document.addEventListener("DOMContentLoaded", init, false);
 
-//switching videos (playlist)
-var videos = 
-[
- [
-	"http://media.w3.org/2010/05/sintel/poster.png",
-	"http://media.w3.org/2010/05/sintel/trailer.mp4",
-	"http://media.w3.org/2010/05/sintel/trailer.webm"
- ],
- [
-	"http://media.w3.org/2010/05/bunny/poster.png",
-	"http://media.w3.org/2010/05/bunny/trailer.mp4"
- ],
- [
-	"http://media.w3.org/2010/05/bunny/poster.png",
-	"http://media.w3.org/2010/05/bunny/movie.mp4"
- ],
- [
-	"http://media.w3.org/2010/05/video/poster.png",
-	"http://media.w3.org/2010/05/video/movie_300.mp4",
-	"http://media.w3.org/2010/05/video/movie_300.webm"
- ]
- ];
 function switchVideo(n) {
 	if (n >= videos.length) n = 0;
 	document._video.setAttribute("poster", videos[n][0]);
 	document._video.setAttribute("src", videos[n][1]);
   	document._video.load();
+}
+
+function playOrPause(){
+	if(document._video.paused || document._video.ended){
+		document._video.play();
+      	document._playBtn.innerHTML = "pause";
+	}else{
+		document._video.pause();
+      	document._playBtn.innerHTML = "play";
+	}
+}
+
+function videoSkip(bo){
+	if(bo){
+		document._video.currentTime+=10;
+	}else{
+		document._video.currentTime-=10;
+	}
+}
+
+function changeSpeed(bo){
+	if(bo){
+		document._video.playbackRate+=0.1;
+	}else{
+		document._video.playbackRate-=0.1;
+	}
+}
+
+function changeVolume(bo){
+	if(bo){
+		document._video.volume+=0.1;
+	}else{
+		document._video.volume-=0.1;
+	}
+}
+
+function muted(){
+	if(document._video.muted){
+		document._video.muted=false;
+		document._mutedBtn.innerHTML = "muted";
+	}else{
+		document._video.muted=true
+		document._mutedBtn.innerHTML = "mute";
+	}
 }
