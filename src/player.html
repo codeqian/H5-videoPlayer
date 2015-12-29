@@ -8,21 +8,27 @@
 		<script src="js/videoplayer.js"></script>
 	</head>
 	<body>
-		<div id="playerbox">
-			<video id="video" controls width="640" height="480" poster="http://media.w3.org/2010/05/video/poster.png">
-				<source src="http://media.w3.org/2010/05/video/movie_300.mp4" type="video/mp4" />
-				<p>Your browser does not support the video tag.</p>
-			</video>
+	<div id="playerPan">
+		<video id="mainPlayer" controls poster="http://media.w3.org/2010/05/video/poster.png" onmouseover="mOver(this)" onmouseout="mOut(this)">
+			<source src="http://media.w3.org/2010/05/video/movie_300.mp4" type="video/mp4" />
+			<p>Your browser does not support the video tag.</p>
+		</video>
+		<div id="controlsPan">
+			<img id="playBtn" onclick="playOrPause()" class="btnimg" src="images/play.png"
+			/>
+			<span id="currenttimer" class="controlstext">0:00</span>
+			<div id="progressBar" class="controlBar">
+			    <div id="innerBar" class="controlInner"></div>
+			</div>
+			<span id="alltimer" class="controlstext">0:00</span>
+			<img id="forwordBtn" onclick="playOrPause()" class="btnimg" src="images/forward.png"/>
+			<img id="rewordBtn" onclick="playOrPause()" class="btnimg" src="images/backward.png"/>
+		    <!-- <button id="volumeUp" onclick="changeVolume(true)">volume+=0.1</button>
+		    <button id="volumeDown" onclick="changeVolume(false)">volume-=0.1</button> -->
+		    <img id="mutedBtn" onclick="muted()" class="btnimg" src="images/soundon.png"/>
+		    <img id="fullscreenBtn" onclick="fullscreen()" class="btnimg" src="images/fullscreen.png"/>
 		</div>
-		<div id="buttons">
-		    <button id="playBtn" onclick="playOrPause()">play</button>
-		    <button id="forwordBtn" onclick="videoSkip(true)">currentTime+=10</button>
-		    <button id="rewordBtn" onclick="videoSkip(false)">currentTime-=10</button>
-		    <button id="speedUpBtn" onclick="changeSpeed(true)">playbackRate+</button>
-		    <button id="speedDownBtn" onclick="changeSpeed(false)">playbackRate-</button>
-		    <button id="volumeUp" onclick="changeVolume(true)">volume+=0.1</button>
-		    <button id="volumeDown" onclick="changeVolume(false)">volume-=0.1</button><br>
-		    <button id="mutedBtn" onclick="muted()">muted</button>
-	    </div>
+	</div>
+	<div id="testlog">test log</div>
 	</body>
 </html>
