@@ -12,7 +12,7 @@ body{
 	background-color: black;
 }
 
-#mainPlayer{
+#mainVideo{
 	margin: auto;
 	width: 640px;
 	height: 480px;
@@ -20,6 +20,7 @@ body{
 
 #controlsPan{
 	width: 640px;
+	height: 28px;
 	margin: auto;
 	padding: 4px 0px 4px 0px;
 	position:absolute;
@@ -30,16 +31,59 @@ body{
 	text-align: center;
 }
 
+#progressBar{
+	width: 400px;
+}
+
+#volumeBar{
+	width: 40px;
+}
+
 button{
 	font-family: Helvetica Neue, "Arial", Helvetica, Verdana, sans-serif;
+}
+
+.controlBar{
+	height: 10px;
+	position: relative;
+	background-color: white;
+	background-color:rgba(255,255,255,0.5);
+	border-radius:5px;
+	vertical-align: middle;
+	margin-top: 8px;
+	margin-right: 2px;
+	cursor:pointer;
+}
+
+.controlInner{
+	width: 16px;
+	height: 16px;
+	background-color: white;
+	border-radius:8px;
+	cursor:pointer;
+	margin-top: -3px;
 }
 
 .btnimg{
 	cursor:pointer;
 	vertical-align: middle;
+	margin: 2px;
 }
 
 .controlstext{
 	color: white;
 	vertical-align: middle;
+	margin: 2px;
+}
+
+.controlsLeftItem{
+	float: left;
+}
+
+.controlsRightItem{
+	float: right;
+}
+
+.clearBox{
+	clear: both;
 }

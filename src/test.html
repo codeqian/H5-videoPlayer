@@ -7,6 +7,46 @@
 .divcss5{position:relative;width:400px;height:300px;border:1px solid #F00} 
 .diva{position:absolute;width:50px;height:100px;bottom:0px;left:120px;background:#00F} 
 .divb{position:absolute;width:50px;height:150px;bottom:0;left:180px;background:#00F} 
+.volume-box {	
+    height: 30px;
+	
+    transition: all 0.1s ease-in-out; 
+}
+
+.volume-box:hover {	
+    height: 135px;
+    padding-top: 5px;
+}
+
+.volume-slider {	
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.1s ease-in-out; 
+}
+.video-seek .ui-slider-handle {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #333;
+    top: -4px;
+
+    border-radius:10px;	
+	
+    background: #e6e6e6;
+    background-image: linear-gradient(to bottom, #e6e6e6, #d5d5d5);
+    box-shadow: inset 0 -3px 3px #d5d5d5;	
+}
+
+.video-seek .ui-slider-handle.ui-state-hover {
+    background: #fff;
+}
+
+.video-seek .ui-slider-range {
+    border-radius:15px;
+	
+    background: #4cbae8;
+    background-image: linear-gradient(to bottom, #4cbae8, #39a2ce);
+    box-shadow: inset 0 -3px 3px #39a2ce;
+}
 </style> 
 </head> 
 <body> 
@@ -17,5 +57,12 @@
     <div id="innerBar" class="controlInner"></div>
 </div>
 </div> 
+<progress max="100" value="20"><ie style="width:20%;"></ie></progress>
+<div class="video-seek"></div>
+    <div class="video-timer">00:00</div>
+    <div class="volume-box">
+        <div class="volume-slider"></div>
+        <a class="volume-button" title="静音/取消静音"></a>
+    </div>
 </body> 
 </html> 

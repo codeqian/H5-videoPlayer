@@ -9,24 +9,28 @@
 	</head>
 	<body>
 	<div id="playerPan">
-		<video id="mainPlayer" controls poster="http://media.w3.org/2010/05/video/poster.png" onmouseover="mOver(this)" onmouseout="mOut(this)">
+		<video id="mainVideo" controls poster="http://media.w3.org/2010/05/video/poster.png" onmouseover="mOver(this)" onmouseout="mOut(this)">
 			<source src="http://media.w3.org/2010/05/video/movie_300.mp4" type="video/mp4" />
 			<p>Your browser does not support the video tag.</p>
 		</video>
 		<div id="controlsPan">
-			<img id="playBtn" onclick="playOrPause()" class="btnimg" src="images/play.png"
+			<img id="playBtn" onclick="playOrPause()" class="btnimg controlsLeftItem" src="images/play.png"
 			/>
-			<span id="currenttimer" class="controlstext">0:00</span>
-			<div id="progressBar" class="controlBar">
+			<span id="currenttime" class="controlstext controlsLeftItem">0:00</span>
+			<div id="progressBar" onclick="videoSeekByClick()" class="controlBar controlsLeftItem">
 			    <div id="innerBar" class="controlInner"></div>
 			</div>
-			<span id="alltimer" class="controlstext">0:00</span>
-			<img id="forwordBtn" onclick="playOrPause()" class="btnimg" src="images/forward.png"/>
-			<img id="rewordBtn" onclick="playOrPause()" class="btnimg" src="images/backward.png"/>
+			<span id="alltime" class="controlstext controlsLeftItem">0:00</span>
+			<img id="rewordBtn" onclick="playOrPause()" class="btnimg controlsLeftItem" src="images/backward.png"/>
+			<img id="forwordBtn" onclick="playOrPause()" class="btnimg controlsLeftItem" src="images/forward.png"/>
 		    <!-- <button id="volumeUp" onclick="changeVolume(true)">volume+=0.1</button>
 		    <button id="volumeDown" onclick="changeVolume(false)">volume-=0.1</button> -->
-		    <img id="mutedBtn" onclick="muted()" class="btnimg" src="images/soundon.png"/>
-		    <img id="fullscreenBtn" onclick="fullscreen()" class="btnimg" src="images/fullscreen.png"/>
+		    <div id="volumeBar" onclick="changeVolumeByClick()" class="controlBar controlsRightItem">
+			    <div id="innerBar" class="controlInner"></div>
+			</div>
+		    <img id="mutedBtn" onclick="muted()" class="btnimg controlsRightItem" src="images/soundon.png"/>
+		    <img id="fullscreenBtn" onclick="fullscreen()" class="btnimg controlsRightItem" src="images/fullscreen.png"/>
+		    <div class="clear"></div>
 		</div>
 	</div>
 	<div id="testlog">test log</div>
