@@ -1,6 +1,12 @@
 function init() {
 	window._duration=0;
 	window._curtime=0;
+	window._progressBarWidth=0;
+	window._volumeBarWidth=0;
+	window._progressBarX0=0;
+	window._volumeBarX0=0;
+	document._playerPan=document.getElementById("playerPan");
+	document._controlsPan=document.getElementById("controlsPan");
     document._video = document.getElementById("mainVideo");
     document._playBtn=document.getElementById("playBtn");
     document._mutedBtn=document.getElementById("mutedBtn");
@@ -9,27 +15,34 @@ function init() {
     document._alltime=document.getElementById("alltime");
     document._progressBar=document.getElementById("progressBar");
     document._volumeBar=document.getElementById("volumeBar");
+    document._videoInner=document.getElementById("videoInnerBar");
+    document._volInner=document.getElementById("volInnerBar");
     document._video.controls = false;
     //获得视频长度
     var i=setInterval(function() {
 		if(document._video.readyState > 0) {
-			document._alltime.innerHTML=timeFormat(document._video.duration);
+			window._duration=document._video.duration;
+			document._alltime.innerHTML=timeFormat(window._duration);
 			document._video.addEventListener("timeupdate",getCurrentTime);
 			document._video.addEventListener("volumechange",volChanged);
 			clearInterval(i);
 		}
 	}, 200);
+
+	window._progressBarWidth=document._progressBar.clientWidth-document._videoInner.clientWidth;
+	window._volumeBarWidth=document._volumeBar.clientWidth-document._volInner.clientWidth;
+	getBarX0();
 }
 
 document.addEventListener("DOMContentLoaded", init, false);
 document.addEventListener("webkitfullscreenchange", screenChanged);
+window.addEventListener("resize",getBarX0);
 
-//切换视频源
-function switchVideo(n) {
-	if (n >= videos.length) n = 0;
-	document._video.setAttribute("poster", videos[n][0]);
-	document._video.setAttribute("src", videos[n][1]);
-  	document._video.load();
+//获得当前进度条初始位置
+function getBarX0(){
+	window._progressBarX0=document._playerPan.offsetLeft+88;
+	window._volumeBarX0=document._playerPan.offsetLeft+document._playerPan.clientWidth-window._volumeBarWidth-2;
+	showLog(document._playerPan.offsetLeft+":"+window._progressBarX0+":"+window._volumeBarX0);
 }
 
 //鼠标移入
@@ -65,32 +78,48 @@ function videoSkip(bo){
 }
 
 //改变播放速率
-function changeSpeed(bo){
-	if(bo){
-		document._video.playbackRate+=0.1;
-	}else{
-		document._video.playbackRate-=0.1;
-	}
-}
-
-//视频seek
-function videoSeekByClick(e){
-	alert("click");
-	alert(e.pageX);
-}
-
-//音量放大或缩小0.1
-// function changeVolume(bo){
+// function changeSpeed(bo){
 // 	if(bo){
-// 		document._video.volume+=0.1;
+// 		document._video.playbackRate+=0.1;
 // 	}else{
-// 		document._video.volume-=0.1;
+// 		document._video.playbackRate-=0.1;
 // 	}
 // }
 
+//设置进度滑块当前位置
+function setVideoInnerPosition(_time){
+	var _position=parseInt(window._progressBarWidth*(_time/window._duration));
+	document._videoInner.style.left=_position+"px";
+}
+
+//视频seek
+function videoSeekByClick(event){
+	showLog("click");
+	var e = event || window.event;
+	showLog("get event");
+	var currentX=e.clientX;//firefox下clientX和pageX均无效
+	showLog(currentX);
+	var seekTime=window._duration*((currentX-window._progressBarX0)/window._progressBarWidth);
+	showLog("seek to:"+seekTime);
+	document._video.currentTime=seekTime;
+	setInnerBarPosition(seekTime);
+}
+
 //音量设置到指定值
-function changeVolumeByClick(e){
+function changeVolumeByClick(event){
+	var e = event || window.event;
+	var currentX=e.clientX;
+	var vol=(currentX-window._volumeBarX0)/window._volumeBarWidth
 	document._video.volume=vol;
+	setVolInnerPosition(vol);
+	showLog("vol:"+vol);
+}
+
+//设置音量滑块当前位置
+function setVolInnerPosition(_vol){
+	var _position=parseInt(window._volumeBarWidth*_vol);
+	document._volInner.style.left=_position+"px";
+	showLog("_position:"+_position);
 }
 
 //静音
@@ -114,7 +143,7 @@ function fullscreen(){
 }
 
 //音量改变
-function volChangee(){
+function volChanged(){
 	if(document._video.muted){
 		document._mutedBtn.src = "images/soundoff.png";
 	}else{
@@ -133,7 +162,9 @@ function screenChanged(){
 
 //当前时间监听
 function getCurrentTime(){
-	document._currenttime.innerHTML=timeFormat(document._video.currentTime);
+	var seekTime=document._video.currentTime;
+	document._currenttime.innerHTML=timeFormat(seekTime);
+	setVideoInnerPosition(seekTime);
 }
 
 //转换时间格式

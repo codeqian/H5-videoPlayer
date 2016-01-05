@@ -4,6 +4,7 @@ body{
 	margin: 0px;
 }
 
+/*播放器区域*/
 #playerPan{
 	position:relative;
 	width:640px;
@@ -12,12 +13,14 @@ body{
 	background-color: black;
 }
 
+/*主视频*/
 #mainVideo{
 	margin: auto;
 	width: 640px;
 	height: 480px;
 }
 
+/*操作面板*/
 #controlsPan{
 	width: 640px;
 	height: 28px;
@@ -31,18 +34,18 @@ body{
 	text-align: center;
 }
 
-#progressBar{
-	width: 400px;
-}
-
-#volumeBar{
-	width: 40px;
-}
-
 button{
 	font-family: Helvetica Neue, "Arial", Helvetica, Verdana, sans-serif;
 }
 
+/*logo样式*/
+.logoImg{
+	top:4px;
+	right:4px;
+	position:absolute;
+}
+
+/*进度条样式*/
 .controlBar{
 	height: 10px;
 	position: relative;
@@ -55,33 +58,53 @@ button{
 	cursor:pointer;
 }
 
+/*进度滑块样式*/
 .controlInner{
 	width: 16px;
 	height: 16px;
 	background-color: white;
 	border-radius:8px;
 	cursor:pointer;
+	position:absolute;
 	margin-top: -3px;
 }
 
+/*进度条宽度*/
+#progressBar{
+	width: 320px;
+}
+
+/*音量条宽度*/
+#volumeBar{
+	width: 40px;
+}
+
+/*图片按钮*/
 .btnimg{
 	cursor:pointer;
 	vertical-align: middle;
 	margin: 2px;
 }
 
+/*控制区文字*/
 .controlstext{
+	width: 60px;
 	color: white;
 	vertical-align: middle;
+	overflow: hidden;
 	margin: 2px;
 }
 
-.controlsLeftItem{
+/*控制区靠左模块*/
+.floatLeftItem{
 	float: left;
+	display: block;
 }
 
-.controlsRightItem{
+/*控制区靠右模块*/
+.floatRightItem{
 	float: right;
+	display: block;
 }
 
 .clearBox{
