@@ -7,6 +7,7 @@ body{
 /*播放器区域*/
 #playerPan{
 	position:relative;
+	overflow: hidden;
 	width:640px;
 	height: 480px;
 	margin: auto;
@@ -32,6 +33,8 @@ body{
 	background-color:rgba(0,0,0,0.5);
 	border-radius:6px;
 	text-align: center;
+	transition: opacity 1s;
+    -webkit-transition: opacity 1;
 }
 
 button{
@@ -109,4 +112,13 @@ button{
 
 .clearBox{
 	clear: both;
+}
+
+/*淡入*/
+.boxfadeIn1{
+	opacity: 1;
+}
+/*淡出*/
+.boxfadeOut1{
+	opacity: 0;
 }

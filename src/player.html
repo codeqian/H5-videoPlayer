@@ -4,21 +4,24 @@
 		<title>video player</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="css/playerstyle.css" media="screen" type="text/css" />
+		<link rel="stylesheet" href="css/animation.css" />
 		<script src="js/jquery-1.11.3.min.js"></script>
 		<script src="js/videoplayer.js"></script>
 	</head>
 	<body>
-	<div id="playerPan">
-		<video id="mainVideo" controls poster="http://media.w3.org/2010/05/video/poster.png" onmouseover="mOver(this)" onmouseout="mOut(this)">
+	<div id="playerPan" onmouseover="overPlayer(this)" onmouseout="outPlayer(this)">
+		<video id="mainVideo" controls poster="http://media.w3.org/2010/05/video/poster.png">
 			<source src="http://media.w3.org/2010/05/video/movie_300.mp4" type="video/mp4" />
+			<!-- <source src="http://media.w3.org/2010/05/video/movie_300.webm" type="video/webm"/>
+   			<source src="http://media.w3.org/2010/05/video/movie_300.ogv" type="video/ogg"/> -->
 			<p>Your browser does not support the video tag.</p>
 		</video>
 		<img src="images/logo.png" class="logoImg floatRightItem" />
 		<div id="controlsPan">
 			<img id="playBtn" onclick="playOrPause()" class="btnimg floatLeftItem" src="images/play.png"
 			/>
-			<span id="currenttime" class="controlstext floatLeftItem">000:00</span>
-			<div id="progressBar" onclick="videoSeekByClick()" class="controlBar floatLeftItem">
+			<span id="currenttime" class="controlstext floatLeftItem">0:00</span>
+			<div id="progressBar" onclick="videoSeekByClick(event)" class="controlBar floatLeftItem">
 			    <div id="videoInnerBar" class="controlInner"></div>
 			</div>
 			<span id="alltime" class="controlstext floatLeftItem">0:00</span>
@@ -26,7 +29,7 @@
 			<img id="forwordBtn" onclick="videoSkip(true)" class="btnimg floatLeftItem" src="images/forward.png"/>
 		    <!-- <button id="volumeUp" onclick="changeVolume(true)">volume+=0.1</button>
 		    <button id="volumeDown" onclick="changeVolume(false)">volume-=0.1</button> -->
-		    <div id="volumeBar" onclick="changeVolumeByClick()" class="controlBar floatRightItem">
+		    <div id="volumeBar" onclick="changeVolumeByClick(event)" class="controlBar floatRightItem">
 			    <div id="volInnerBar" class="controlInner"></div>
 			</div>
 		    <img id="mutedBtn" onclick="muted()" class="btnimg floatRightItem" src="images/soundon.png"/>
