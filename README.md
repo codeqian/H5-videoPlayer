@@ -4,6 +4,6 @@ H5 视频播放器
 js代码基于jquery框架。
 
 DEMO:<br>
-htmlpreview.github.io/?https://github.com/codeqian/H5-videoPlayer/blob/master/src/player.html
+http://codeqian.github.io/H5-videoPlayer/demo/mp4/player.html
 
 MIT License
