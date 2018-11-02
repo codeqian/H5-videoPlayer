@@ -1,0 +1,8 @@
+/*淡入*/
+.boxfadeIn{
+	opacity: 1;
+}
+/*淡出*/
+.boxfadeOut{
+	opacity: 0;
+}
