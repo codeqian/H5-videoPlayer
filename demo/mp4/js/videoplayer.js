@@ -7,6 +7,8 @@ function init() {
 	window._volumeBarX0=0;
 	document._playerPan=document.getElementById("playerPan");
 	document._controlsPan=document.getElementById("controlsPan");
+    document._videoUrlInput=$("input[id='videoUrlInput']");
+    document._speedInput=$("input[id='speedRate']");
     document._video = document.getElementById("mainVideo");
     document._playBtn=document.getElementById("playBtn");
     document._mutedBtn=document.getElementById("mutedBtn");
@@ -50,8 +52,11 @@ function getBarX0(){
 //播放或暂停
 function playOrPause(){
 	if(document._video.paused || document._video.ended){
+        document._video.src=document._videoUrlInput.val();
 		document._video.play();
-        document._video.playbackRate+=15;
+		var speedRate=document._speedInput.val();
+        console.log("speed:"+speedRate);
+        document._video.playbackRate=speedRate;
       	document._playBtn.src = "images/pause.png";
 	}else{
 		document._video.pause();

@@ -4,6 +4,7 @@
     <list default="true" id="d1e7fde2-0438-4568-871e-3849fdeb5982" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/demo/mp4/js/videoplayer.js" afterPath="$PROJECT_DIR$/demo/mp4/js/videoplayer.js" />
+      <change beforePath="$PROJECT_DIR$/demo/mp4/player.html" afterPath="$PROJECT_DIR$/demo/mp4/player.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,20 +19,30 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="player.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/player.html">
+        <entry file="file://$PROJECT_DIR$/demo/mp4/player.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+            <state relative-caret-position="105">
+              <caret line="12" column="108" lean-forward="false" selection-start-line="12" selection-start-column="108" selection-end-line="12" selection-end-column="108" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="videoplayer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/demo/hls/js/videoplayer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="103" column="77" lean-forward="true" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="77" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="player.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo/mp4/player.html">
+        <entry file="file://$PROJECT_DIR$/demo/hls/player.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="484">
+              <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -40,8 +51,8 @@
       <file leaf-file-name="videoplayer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/demo/mp4/js/videoplayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="137" column="1" lean-forward="true" selection-start-line="137" selection-start-column="1" selection-end-line="137" selection-end-column="1" />
+            <state relative-caret-position="462">
+              <caret line="60" column="10" lean-forward="true" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -50,7 +61,7 @@
       <file leaf-file-name="videoplayer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/videoplayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2266">
+            <state relative-caret-position="22">
               <caret line="103" column="77" lean-forward="false" selection-start-line="103" selection-start-column="77" selection-end-line="103" selection-end-column="77" />
               <folding />
             </state>
@@ -72,10 +83,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>document._playerPan</find>
-      <find>_videoUrlInput</find>
       <find>_playBtn</find>
       <find>testlog</find>
-      <find>playOrPause</find>
       <find>setInnerBarPosition</find>
       <find>logoImg floatRightItem</find>
       <find>videoUrlInput</find>
@@ -87,6 +96,8 @@
       <find>boxfadeIn</find>
       <find>changeSpeed</find>
       <find>document._video</find>
+      <find>_videoUrlInput</find>
+      <find>playOrPause</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -98,6 +109,7 @@
         <option value="$PROJECT_DIR$/src/player.html" />
         <option value="$PROJECT_DIR$/src/css/playerstyle.css" />
         <option value="$PROJECT_DIR$/src/js/videoplayer.js" />
+        <option value="$PROJECT_DIR$/demo/mp4/player.html" />
         <option value="$PROJECT_DIR$/demo/mp4/js/videoplayer.js" />
       </list>
     </option>
@@ -146,6 +158,13 @@
               <item name="H5-videoPlayer" type="462c0819:PsiDirectoryNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
               <item name="hls" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="H5-videoPlayer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="H5-videoPlayer" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="hls" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="H5-videoPlayer" type="b2602c69:ProjectViewProjectNode" />
@@ -219,12 +238,12 @@
       <workItem from="1541059247882" duration="7297000" />
       <workItem from="1541119459714" duration="12457000" />
       <workItem from="1541135475260" duration="174000" />
-      <workItem from="1541491515225" duration="514000" />
+      <workItem from="1541491515225" duration="1795000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20442000" />
+    <option name="totallyTimeSpent" value="21723000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -362,14 +381,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/videoplayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2266">
-          <caret line="103" column="77" lean-forward="false" selection-start-line="103" selection-start-column="77" selection-end-line="103" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/player.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -378,18 +389,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/demo/hls/player.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/videoplayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="103" column="77" lean-forward="false" selection-start-line="103" selection-start-column="77" selection-end-line="103" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/hls/js/videoplayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="103" column="77" lean-forward="true" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demo/mp4/player.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="12" column="108" lean-forward="false" selection-start-line="12" selection-start-column="108" selection-end-line="12" selection-end-column="108" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/mp4/js/videoplayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="137" column="1" lean-forward="true" selection-start-line="137" selection-start-column="1" selection-end-line="137" selection-end-column="1" />
+        <state relative-caret-position="462">
+          <caret line="60" column="10" lean-forward="true" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
           <folding />
         </state>
       </provider>
