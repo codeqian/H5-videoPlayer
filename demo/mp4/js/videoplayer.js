@@ -51,6 +51,7 @@ function getBarX0(){
 function playOrPause(){
 	if(document._video.paused || document._video.ended){
 		document._video.play();
+        document._video.playbackRate+=15;
       	document._playBtn.src = "images/pause.png";
 	}else{
 		document._video.pause();
